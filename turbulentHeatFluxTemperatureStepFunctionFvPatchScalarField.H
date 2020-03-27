@@ -24,13 +24,15 @@ Group
 Description
     Fixed heat boundary condition to specify temperature gradient. Input
     heat source either specified in terms of an absolute power [W], or as a
-    flux [W/m^2].
+    flux [W/m^2]. Wiht start time one can set the start of heating with
+	a step jump.
     \heading Patch usage
     \table
         Property     | Description             | Required    | Default value
         heatSource   | heat source type: \c flux [W/m^2] or \c power [W]| yes |
         q            | heat source value       | yes          |
         alphaEff     | turbulent thermal diffusivity field name | yes |
+        startTime    | start time of heating   | yes |
     \endtable
     Example of the boundary condition specification:
     \verbatim
@@ -41,6 +43,7 @@ Description
         q               uniform 10;
         alphaEff        alphaEff;
         value           uniform 300; // place holder
+        startTime       5;
     }
     \endverbatim
 Note
