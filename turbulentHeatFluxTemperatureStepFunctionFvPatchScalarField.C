@@ -134,7 +134,8 @@ void turbulentHeatFluxTemperatureStepFunctionFvPatchScalarField::updateCoeffs()
 void turbulentHeatFluxTemperatureStepFunctionFvPatchScalarField::write(Ostream& os) const
 {
     turbulentHeatFluxTemperatureFvPatchScalarField::write(os);
-    writeEntry("startTime", os);
+    //writeEntry("startTime", os);
+    os.writeKeyword("startTime") << startTime_ << token::END_STATEMENT << nl;
 }
 
 
